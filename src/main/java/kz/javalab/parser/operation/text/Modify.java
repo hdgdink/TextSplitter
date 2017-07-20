@@ -1,14 +1,12 @@
 package kz.javalab.parser.operation.text;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
  * Created by HdgDink on 20.07.2017.
  * В тексте после k-го символа вставить заданную подстроку
  */
+
 public class Modify {
     private static final String SUBSTRING_FOR_INSERTING = "\"I inserted this substring after the specified character\"";
     private static final String ENTER_INDEX = "Enter index of char";
