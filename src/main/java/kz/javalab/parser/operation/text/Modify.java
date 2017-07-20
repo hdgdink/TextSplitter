@@ -14,22 +14,25 @@ public class Modify {
     private static final String ENTER_INDEX = "Enter index of char";
     private static final String WRONG_INDEX = "Entered character index is missing";
     private int charIndex;
+    private boolean check = false;
     private String modText = "";
 
     public String textMod(String inText) {
         Scanner reader = new Scanner(System.in);
         System.out.println(ENTER_INDEX);
 
-
-        if (reader.hasNextInt()) {
-            charIndex = reader.nextInt();
-            modText = String.valueOf(new StringBuffer(inText).insert(charIndex, SUBSTRING_FOR_INSERTING).toString());
-            reader.close();
-        } else {
-            System.out.println(WRONG_INDEX);
+        while (!check) {
+            if (reader.hasNextInt() & charIndex <= inText.length()) {
+                charIndex = reader.nextInt();
+                modText = String.valueOf(new StringBuffer(inText).insert(charIndex, SUBSTRING_FOR_INSERTING).toString());
+                reader.close();
+                check = true;
+            } else {
+                System.out.println(WRONG_INDEX);
+                reader.next();
+                check = false;
+            }
         }
-
-
         return modText;
     }
 
