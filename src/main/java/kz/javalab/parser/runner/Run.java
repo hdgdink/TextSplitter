@@ -8,6 +8,8 @@ import kz.javalab.parser.operation.text.Parser;
 /**
  * Created by HdgDink on 18.07.2017.
  */
+
+
 public class Run {
     public static void main(String[] args) {
         FileRead reader = new FileRead();

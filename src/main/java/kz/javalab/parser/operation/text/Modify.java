@@ -20,11 +20,13 @@ public class Modify {
         System.out.println(ENTER_INDEX);
 
         while (!check) {
-            if (reader.hasNextInt() & charIndex <= inText.length()) {
+            if (reader.hasNextInt()) {
                 charIndex = reader.nextInt();
-                modText = String.valueOf(new StringBuffer(inText).insert(charIndex, SUBSTRING_FOR_INSERTING).toString());
+                if (charIndex <= inText.length()){
+                    modText = String.valueOf(new StringBuffer(inText).insert(charIndex, SUBSTRING_FOR_INSERTING).toString());
                 reader.close();
-                check = true;
+                check = true;}
+                else textMod(inText);
             } else {
                 System.out.println(WRONG_INDEX);
                 reader.next();
